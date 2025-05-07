@@ -1,0 +1,23 @@
+[
+  {
+    "id": "301a621e-5332-4749-a939-1534c9e66657",
+    "title": "Inception",
+    "description": "A thief enters dreams...",
+    "rating": 8.8,
+    "available": false
+  },
+  {
+    "id": "340c23b3-37ec-4675-859d-ca4900a0af70",
+    "title": "The Matrix",
+    "description": "A hacker discovers...",
+    "rating": 8.7,
+    "available": false
+  },
+  {
+    "id": "36374753-a4e8-43ef-ba16-5234b89447d5",
+    "title": "The Matrix 2",
+    "description": "A hacker discovers.. 2.",
+    "rating": 8.0,
+    "available": true
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "userId": "1b7b8c39-fe95-4cc3-ac38-96f830885615",
+    "username": "Keshan",
+    "password": null,
+    "email": "ex15gmail.com",
+    "role": "USER"
+  },
+  {
+    "userId": "4e66b838-33bb-4700-aa0b-618db16348c4",
+    "username": "Heshan",
+    "password": null,
+    "email": "ex13gmail.com",
+    "role": "USER"
+  },
+  {
+    "userId": "d1569d02-734a-4fe9-b043-e5bae129e8e1",
+    "username": "Yeshan",
+    "password": "123",
+    "email": "ex14gmail.com",
+    "role": "USER"
+  },
+  {
+    "userId": "5c11d5b6-b28d-4d83-9cef-821eb0b1d229",
+    "username": "Neshan",
+    "password": null,
+    "email": "ex15gmail.com",
+    "role": "ADMIN"
+  },
+  {
+    "userId": "5c11d5b6-b28d-4d83-9cef-821eb0b1d229",
+    "username": "Neshan",
+    "password": null,
+    "email": "ex15gmail.com",
+    "role": "ADMIN"
+  }
+]

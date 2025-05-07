@@ -1,0 +1,38 @@
+package org.movie.project_001.controllers;
+
+import org.movie.project_001.models.WishList;
+import org.movie.project_001.service.WishListService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.UUID;
+
+@RestController
+@RequestMapping("/wishlist")
+public class WishListController {
+    @Autowired
+    private WishListService wishlistService;
+
+    @GetMapping
+    public List<WishList> getAllWishlists() throws IOException {
+        return wishlistService.getAllWishlists();
+    }
+
+    @GetMapping("/{userId}")
+    public WishList getWishlistByUserId(@PathVariable UUID userId) throws IOException {
+        return wishlistService.getWishlistByUserId(userId);
+    }
+
+    @PostMapping("/add")
+    public void addMovieToWishlist(@RequestParam UUID userId, @RequestParam UUID movieId) throws IOException {
+        wishlistService.addMovieToWishlist(userId, movieId);
+    }
+
+    @DeleteMapping("/remove")
+    public void removeMovieFromWishlist(@RequestParam UUID userId, @RequestParam UUID movieId) throws IOException {
+        wishlistService.removeMovieFromWishlist(userId, movieId);
+    }
+
+}

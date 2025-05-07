@@ -1,0 +1,54 @@
+2025-05-07T14:33:13.620+05:30  INFO 24417 --- [Project_001] [main] o.m.p.Project001ApplicationTests         : Starting Project001ApplicationTests using Java 23.0.2 with PID 24417 (started by heshangamage in /Users/heshangamage/Desktop/Software Engneering/Week7/Project_001)
+2025-05-07T14:33:13.624+05:30  INFO 24417 --- [Project_001] [main] o.m.p.Project001ApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2025-05-07T14:33:14.608+05:30  INFO 24417 --- [Project_001] [main] o.m.p.Project001ApplicationTests         : Started Project001ApplicationTests in 1.501 seconds (process running for 2.299)
+2025-05-07T14:33:48.805+05:30  INFO 24448 --- [Project_001] [restartedMain] o.m.project_001.Project001Application    : Starting Project001Application using Java 23.0.2 with PID 24448 (/Users/heshangamage/Desktop/Software Engneering/Week7/Project_001/target/classes started by heshangamage in /Users/heshangamage/Desktop/Software Engneering/Week7/Project_001)
+2025-05-07T14:33:48.815+05:30  INFO 24448 --- [Project_001] [restartedMain] o.m.project_001.Project001Application    : No active profile set, falling back to 1 default profile: "default"
+2025-05-07T14:33:49.095+05:30  INFO 24448 --- [Project_001] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-07T14:33:49.095+05:30  INFO 24448 --- [Project_001] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-07T14:33:50.651+05:30  INFO 24448 --- [Project_001] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-07T14:33:50.661+05:30  INFO 24448 --- [Project_001] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-07T14:33:50.661+05:30  INFO 24448 --- [Project_001] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-07T14:33:50.792+05:30  INFO 24448 --- [Project_001] [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-07T14:33:50.796+05:30  INFO 24448 --- [Project_001] [restartedMain] o.a.c.c.C.[.[localhost].[/PrimeReel]     : Initializing Spring embedded WebApplicationContext
+2025-05-07T14:33:50.796+05:30  INFO 24448 --- [Project_001] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1700 ms
+2025-05-07T14:33:51.023+05:30  INFO 24448 --- [Project_001] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-07T14:33:51.044+05:30  INFO 24448 --- [Project_001] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/PrimeReel'
+2025-05-07T14:33:51.051+05:30  INFO 24448 --- [Project_001] [restartedMain] o.m.project_001.Project001Application    : Started Project001Application in 3.926 seconds (process running for 5.305)
+2025-05-07T14:34:42.847+05:30  INFO 24448 --- [Project_001] [http-nio-8080-exec-2] o.a.c.c.C.[.[localhost].[/PrimeReel]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-07T14:34:42.848+05:30  INFO 24448 --- [Project_001] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-07T14:34:42.853+05:30  INFO 24448 --- [Project_001] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-05-07T14:38:50.817+05:30  INFO 24448 --- [Project_001] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 32 class path changes (0 additions, 18 deletions, 14 modifications)
+2025-05-07T14:38:50.830+05:30  INFO 24448 --- [Project_001] [Thread-5] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-07T14:38:50.839+05:30  INFO 24448 --- [Project_001] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-07T14:38:51.015+05:30  INFO 24448 --- [Project_001] [restartedMain] o.m.project_001.Project001Application    : Starting Project001Application using Java 23.0.2 with PID 24448 (/Users/heshangamage/Desktop/Software Engneering/Week7/Project_001/target/classes started by heshangamage in /Users/heshangamage/Desktop/Software Engneering/Week7/Project_001)
+2025-05-07T14:38:51.015+05:30  INFO 24448 --- [Project_001] [restartedMain] o.m.project_001.Project001Application    : No active profile set, falling back to 1 default profile: "default"
+2025-05-07T14:38:51.355+05:30  INFO 24448 --- [Project_001] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-07T14:38:51.357+05:30  INFO 24448 --- [Project_001] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-07T14:38:51.358+05:30  INFO 24448 --- [Project_001] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-07T14:38:51.448+05:30  INFO 24448 --- [Project_001] [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-07T14:38:51.451+05:30  INFO 24448 --- [Project_001] [restartedMain] o.a.c.c.C.[.[localhost].[/PrimeReel]     : Initializing Spring embedded WebApplicationContext
+2025-05-07T14:38:51.451+05:30  INFO 24448 --- [Project_001] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 431 ms
+2025-05-07T14:38:51.591+05:30  INFO 24448 --- [Project_001] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-07T14:38:51.607+05:30  INFO 24448 --- [Project_001] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/PrimeReel'
+2025-05-07T14:38:51.613+05:30  INFO 24448 --- [Project_001] [restartedMain] o.m.project_001.Project001Application    : Started Project001Application in 0.655 seconds (process running for 305.882)
+2025-05-07T14:38:51.616+05:30  INFO 24448 --- [Project_001] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-07T14:38:52.668+05:30  INFO 24537 --- [Project_001] [main] o.m.p.Project001ApplicationTests         : Starting Project001ApplicationTests using Java 23.0.2 with PID 24537 (started by heshangamage in /Users/heshangamage/Desktop/Software Engneering/Week7/Project_001)
+2025-05-07T14:38:52.669+05:30  INFO 24537 --- [Project_001] [main] o.m.p.Project001ApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2025-05-07T14:38:53.009+05:30  INFO 24448 --- [Project_001] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 18 class path changes (18 additions, 0 deletions, 0 modifications)
+2025-05-07T14:38:53.011+05:30  INFO 24448 --- [Project_001] [Thread-7] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-07T14:38:53.016+05:30  INFO 24448 --- [Project_001] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-07T14:38:53.094+05:30  INFO 24448 --- [Project_001] [restartedMain] o.m.project_001.Project001Application    : Starting Project001Application using Java 23.0.2 with PID 24448 (/Users/heshangamage/Desktop/Software Engneering/Week7/Project_001/target/classes started by heshangamage in /Users/heshangamage/Desktop/Software Engneering/Week7/Project_001)
+2025-05-07T14:38:53.094+05:30  INFO 24448 --- [Project_001] [restartedMain] o.m.project_001.Project001Application    : No active profile set, falling back to 1 default profile: "default"
+2025-05-07T14:38:53.261+05:30  INFO 24448 --- [Project_001] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-07T14:38:53.262+05:30  INFO 24448 --- [Project_001] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-07T14:38:53.263+05:30  INFO 24448 --- [Project_001] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-07T14:38:53.327+05:30  INFO 24448 --- [Project_001] [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-07T14:38:53.329+05:30  INFO 24448 --- [Project_001] [restartedMain] o.a.c.c.C.[.[localhost].[/PrimeReel]     : Initializing Spring embedded WebApplicationContext
+2025-05-07T14:38:53.329+05:30  INFO 24448 --- [Project_001] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 233 ms
+2025-05-07T14:38:53.419+05:30  INFO 24448 --- [Project_001] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-07T14:38:53.429+05:30  INFO 24448 --- [Project_001] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/PrimeReel'
+2025-05-07T14:38:53.433+05:30  INFO 24448 --- [Project_001] [restartedMain] o.m.project_001.Project001Application    : Started Project001Application in 0.366 seconds (process running for 307.701)
+2025-05-07T14:38:53.434+05:30  INFO 24448 --- [Project_001] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-07T14:38:53.834+05:30  INFO 24537 --- [Project_001] [main] o.m.p.Project001ApplicationTests         : Started Project001ApplicationTests in 1.439 seconds (process running for 2.261)
+2025-05-07T15:29:09.769+05:30  INFO 24448 --- [Project_001] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-07T15:29:09.789+05:30  INFO 24448 --- [Project_001] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
