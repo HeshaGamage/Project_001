@@ -10,6 +10,7 @@ public class Movie {
     private Double rating;
     private boolean available;
     private List<Review> reviews;
+    private String posterUrl;
 //constructor
     public Movie() {
     }
@@ -57,6 +58,14 @@ public class Movie {
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    public String getPosterUrl() {
+        return posterUrl;
+    }
+
+    public void setPosterUrl(String posterUrl) {
+        this.posterUrl = posterUrl;
     }
 }
 

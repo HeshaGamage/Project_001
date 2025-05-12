@@ -1,37 +1,47 @@
 package org.movie.project_001.controllers;
 
 import jakarta.servlet.http.HttpSession;
+import org.movie.project_001.models.User;
 import org.movie.project_001.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
-import java.util.UUID;
 
-@RestController
+
+@Controller
 @RequestMapping("/auth")
 public class AuthController {
 
     @Autowired
     private UserService userService;
 
-    // Sign-In: Register a new user
+    @GetMapping("/signup")
+    public String showSignupPage() {
+        return "signup";
+    }
+
+
+
     @PostMapping("/signup")
     public String signup(@RequestParam String username, @RequestParam String email, @RequestParam String password) throws IOException {
         userService.signIn(username, email, password);
-        return "User registered successfully!";
+        return "redirect:/login";
     }
 
-    // Log-In: Authenticate an existing user
+
     @PostMapping("/login")
     public String logIn(@RequestParam String username, @RequestParam String password, HttpSession session) throws IOException {
-        System.out.println(username);
-        System.out.println(password);
         boolean isAuthenticated = userService.logIn(username, password);
         if (isAuthenticated) {
+            User loggedinUser = userService.getUserByUserName(username);
+
             // Add user info to session to keep them logged in
-            session.setAttribute("user", username);
+            session.setAttribute("username", loggedinUser.getUsername());
+            session.setAttribute("userId", loggedinUser.getUserId());
             return "redirect:/";
+
         } else {
             // Set error message and return to login page
             return "redirect:/login?error=true";

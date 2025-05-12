@@ -1,6 +1,11 @@
 package org.movie.project_001.controllers;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+import org.movie.project_001.models.Movie;
 import org.movie.project_001.models.Rental;
+import org.movie.project_001.service.MovieService;
 import org.movie.project_001.service.RentalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,11 +14,12 @@ import java.util.List;
 import java.util.UUID;
 import java.io.IOException;
 
-@RestController
+@Controller
 @RequestMapping("/rentals")
 public class RentalController {
     @Autowired
     private RentalService rentalService;
+    private MovieService movieService;
 
     @GetMapping
     public List<Rental> getAllRentals() throws IOException {
@@ -21,13 +27,17 @@ public class RentalController {
     }
 
     @GetMapping("/{id}")
-    public Rental getRentalByUserId(@PathVariable UUID id) throws IOException {
+    public List<Rental> getRentalByUserId(@PathVariable UUID id) throws IOException {
         return rentalService.getRentalByUserId(id);
     }
 
     @PostMapping
-    public void rentMovie(@RequestParam UUID movieId, @RequestParam UUID userId, @RequestParam String rentalDate) throws IOException {
-        rentalService.rentMovie(movieId, userId, rentalDate);
+    public String rentMovie(@RequestParam UUID movieId,
+                            @RequestParam UUID userId) throws IOException {
+
+        rentalService.rentMovie(movieId, userId);
+
+        return "redirect:/";
     }
 
     @PutMapping("/return/{id}")

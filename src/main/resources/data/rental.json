@@ -1,16 +1,3 @@
 [
-  {
-    "rentalId": "614671c0-4b49-4337-a88c-55b704def6cd",
-    "movieId": "301a621e-5332-4749-a939-1534c9e66657",
-    "userId": "1b7b8c39-fe95-4cc3-ac38-96f830885615",
-    "rentalDate": "2025-03-21",
-    "returnDate": null
-  },
-  {
-    "rentalId": "6b954859-c1b8-4ff4-9510-44f671f49c1b",
-    "movieId": "cf55f36e-20ae-4641-b3ad-cdf0a780e8ec",
-    "userId": "1b7b8c39-fe95-4cc3-ac38-96f830885615",
-    "rentalDate": "2025-05-01",
-    "returnDate": "2025-05-06"
-  }
+
 ]

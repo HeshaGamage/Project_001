@@ -22,7 +22,7 @@ public class UserService {
                 .orElse(null);
     }
 
-    private User getUserByUserName(String username) throws IOException {
+    public User getUserByUserName(String username) throws IOException {
         return getAllUsers().stream()
                 .filter(user -> user.getUsername().equalsIgnoreCase(username))
                 .findFirst()

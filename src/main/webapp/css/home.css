@@ -1,0 +1,37 @@
+.tagline {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #007bff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+header h1 {
+    color: white;
+    font-size: 1.8rem;
+}
+
+header .btn {
+    background: white;
+    color: #007bff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+header .btn:hover {
+    background: #f1f1f1;
+}

@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.io.File;
+import java.util.stream.Collectors;
 
 @Service
 public class RentalService {
@@ -27,19 +28,19 @@ public class RentalService {
         return Arrays.asList(mapper.readValue(file, Rental[].class));
     }
 
-    public Rental getRentalByUserId(UUID userid) throws IOException {//todo change this to get rental by user id-done
-
+    public List<Rental> getRentalByUserId(UUID userId) throws IOException {
         return getAllRental().stream()
-                .filter(rental -> rental.getUserId().equals(userid))
-                .findFirst()
-                .orElse(null);
-
+                .filter(rental -> rental.getUserId().equals(userId))
+                .collect(Collectors.toList());
     }
+
+
     public void saveRental(Rental rental)throws IOException {
         List<Rental> rentals = new ArrayList<>(getAllRental());
         rentals.add(rental);
         mapper.writeValue(new File(rent_path), rentals);
     }
+
     public void updateRental(UUID id, Rental updatedRental)throws IOException {
         List<Rental> rentals = new ArrayList<>(getAllRental());
         for (int i = 0; i < rentals.size(); i++) {
@@ -50,36 +51,51 @@ public class RentalService {
         }
         mapper.writeValue(new File(rent_path), rentals);
     }
+
     public void deleteRental(UUID id)throws IOException {
         List<Rental> rentals = new ArrayList<>(getAllRental());
         rentals.removeIf(rental -> rental.getRentalId().equals(id));
         mapper.writeValue(new File(rent_path), rentals);
     }
+
     public void returnMovie(UUID rentalId)throws IOException {
         SimpleDateFormat d1 = new SimpleDateFormat("yyyy-MM-dd");
         String date = d1.format(new Date());
         List<Rental> rentals = new ArrayList<>(getAllRental());
         for (Rental rental : rentals) {
-            System.out.println(rental);
             if (rental.getRentalId().equals(rentalId) && rental.getReturnDate() == null) {
-                System.out.println(date);
-                rental.setReturnDate(date); //TODO add current date using Date util-Done
+                rental.setReturnDate(date);
                 break;
             }
         }
         mapper.writeValue(new File(rent_path), rentals);
     }
-    public void rentMovie(UUID movieId, UUID userId,String rentDate)throws IOException {
-        Rental rental = new Rental(UUID.randomUUID(), userId, rentDate, "Null");
+
+    public Optional<Rental> getRentalByUserAndMovieId(UUID userId, UUID movieId) throws IOException{
+        return getAllRental().stream()
+                .filter(rental -> rental.getUserId().equals(userId) && rental.getUserId().equals(movieId))
+                .findFirst();
+
+    }
+
+    public void rentMovie(UUID movieId, UUID userId)throws IOException {
+        String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        Rental rental = new Rental(movieId, userId, date, null);
 
         List<Rental> rentals = new ArrayList<>(getAllRental());
-        rentals.add(rental);
-        mapper.writeValue(new File(rent_path), rentals);
 
-        Movie movie = movieService.getMovieById(movieId);
-        if (movie != null && movie.isAvailable()) {
-            movie.setAvailable(false);
-            movieService.updateMovie(movieId, movie);
+        Optional<Rental> alreadyRentedMovie = getRentalByUserAndMovieId(userId, movieId);
+        if (alreadyRentedMovie.isEmpty()) {
+            rentals.add(rental);
+            mapper.writeValue(new File(rent_path), rentals);
+
+            Movie movie = movieService.getMovieById(movieId);
+            if (movie != null && movie.isAvailable()) {
+                movie.setAvailable(false);
+                movieService.updateMovie(movieId, movie);
+            }
         }
+
     }
+
 }
