@@ -5,7 +5,7 @@
     "description": "A thief enters dreams...",
     "rating": 8.8,
     "available": false,
-    "posterUrl": null
+    "posterUrl": "https://image.tmdb.org/t/p/original/oYuLEt3zVCKq57qu2F8dT7NIa6f.jpg"
   },
   {
     "id": "340c23b3-37ec-4675-859d-ca4900a0af70",
@@ -13,14 +13,22 @@
     "description": "A hacker discovers...",
     "rating": 8.7,
     "available": false,
-    "posterUrl": null
+    "posterUrl": "https://image.tmdb.org/t/p/original/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg"
   },
   {
     "id": "36374753-a4e8-43ef-ba16-5234b89447d5",
-    "title": "The Matrix 2",
-    "description": "A hacker discovers.. 2.",
+    "title": "The Matrix Reloaded",
+    "description": "Neo fights new enemies and uncovers the Matrix's secrets.",
     "rating": 8.0,
     "available": false,
-    "posterUrl": null
+    "posterUrl": "https://image.tmdb.org/t/p/original/aA5qHS0FbSXO8PxcxUIHbDrJyuh.jpg"
+  },
+  {
+    "id": "ba8d51ff-5555-40cd-9c90-db434e4e17e3",
+    "title": "The Karate Kid",
+    "description": "A boy learns kung fu to stand up to bullies and find his strength.",
+    "rating": 8.0,
+    "available": false,
+    "posterUrl": "https://image.tmdb.org/t/p/original/2WK92VLKe87O7dSL5J6epFzL4EH.jpg"
   }
 ]

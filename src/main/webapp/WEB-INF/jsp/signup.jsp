@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Sign Up - Prime Reel</title>
-    <link rel="stylesheet" type="text/css" href="css/signup.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css">
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/signup.css">
 </head>
 <body>
 <div class="signup-page">
