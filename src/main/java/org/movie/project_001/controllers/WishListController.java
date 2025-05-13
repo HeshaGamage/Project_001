@@ -3,19 +3,21 @@ package org.movie.project_001.controllers;
 import org.movie.project_001.models.WishList;
 import org.movie.project_001.service.WishListService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.UUID;
 
-@RestController
+@Controller
 @RequestMapping("/wishlist")
 public class WishListController {
     @Autowired
     private WishListService wishlistService;
 
-    @GetMapping
+    @GetMapping("/all")
+
     public List<WishList> getAllWishlists() throws IOException {
         return wishlistService.getAllWishlists();
     }
@@ -30,9 +32,13 @@ public class WishListController {
         wishlistService.addMovieToWishlist(userId, movieId);
     }
 
-    @DeleteMapping("/remove")
-    public void removeMovieFromWishlist(@RequestParam UUID userId, @RequestParam UUID movieId) throws IOException {
+    @PostMapping("/remove")
+    public String removeMovieFromWishlist(@RequestParam UUID userId, @RequestParam UUID movieId) throws IOException {
         wishlistService.removeMovieFromWishlist(userId, movieId);
+        // Redirect back to the wishlist page after removing the movie
+        return "redirect:/wishlist";
     }
+
+
 
 }

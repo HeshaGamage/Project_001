@@ -1,37 +1,211 @@
-.tagline {
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 24px;
+/* General Styles */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9fafb;
+    color: #4a4a4a;
+    scroll-behavior: smooth; /* Smooth scrolling for links */
 }
 
+/* Header */
 header {
-    position: sticky;
-    top: 0;
-    background-color: #007bff;
-    padding: 20px 40px;
+    background: linear-gradient(90deg, #252850, #1b1e34);
+    color: #fff;
+    padding: 20px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    color: white;
-    font-size: 1.8rem;
+    font-size: 30px;
+    margin: 0;
+    font-weight: 700;
 }
 
-header .btn {
-    background: white;
-    color: #007bff;
-    padding: 8px 12px;
-    border-radius: 4px;
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.btn {
+    background: #ff5757;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #ff4040;
+    transform: scale(1.05);
+}
+
+/* Main Section */
+main {
+    padding: 40px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+main .tagline {
+    font-size: 24px;
     font-weight: bold;
-    transition: background-color 0.3s;
+    color: #1e1e2f;
+    margin-bottom: 40px;
 }
 
-header .btn:hover {
-    background: #f1f1f1;
+/* Movie List Section */
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.movie-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.movie-poster {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* Maintain a fixed aspect ratio */
+    object-fit: cover;
+    transition: filter 0.3s;
+}
+
+.movie-poster:hover {
+    filter: brightness(0.85);
+}
+
+.movie-card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.movie-card-content h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    color: #2c3e50;
+}
+
+.movie-card-content p {
+    margin: 0 0 15px;
+    font-size: 14px;
+    color: #7f8c8d;
+    height: 60px;
+    overflow: hidden; /* Truncate long descriptions */
+    text-overflow: ellipsis;
+}
+
+/* Action Buttons */
+.movie-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.action-button span.material-icons {
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.action-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Specific Button Styles */
+.action-button.rented {
+    background-color: #ffa726;
+    color: white;
+    cursor: not-allowed;
+}
+
+.action-button.rented:hover {
+    background-color: #f39c12;
+    transform: none; /* No scaling for inactive buttons */
+}
+
+.action-button.wishlist {
+    background-color: #1e88e5;
+}
+
+.action-button.wishlist:hover {
+    background-color: #1976d2;
+}
+
+.action-button.rate {
+    background-color: #fdd835;
+    color: #333;
+    font-weight: 600;
+}
+
+.action-button.rate:hover {
+    background-color: #fbc02d;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 30px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .tagline {
+        font-size: 20px;
+        padding: 0 10px;
+    }
+
+    .movie-card-content p {
+        height: 40px; /* Reduce max height of description for smaller screens */
+    }
 }

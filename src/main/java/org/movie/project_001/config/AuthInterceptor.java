@@ -12,7 +12,7 @@ public class AuthInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // Allow public pages without authentication
         String uri = request.getRequestURI();
-        if (uri.endsWith("/login") || uri.endsWith("/error")|| uri.endsWith("/signup")) {
+        if (uri.endsWith("/login") || uri.endsWith("/error")|| uri.endsWith("/signup")|| uri.endsWith("/auth/logout")) {
             return true;
         }
 

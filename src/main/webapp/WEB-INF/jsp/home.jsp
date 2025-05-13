@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,13 +14,15 @@
 <header>
     <h1>Welcome to Prime Reel!</h1>
     <form action="${pageContext.request.contextPath}/auth/logout" method="post" style="margin: 0;">
-
+        <div style="display: flex; align-items: center;">
+            <p>Logged in as: <b>${sessionScope.username}</b></p>
+        </div>
+        <a href="${pageContext.request.contextPath}/wishlist" class="btn">View Wishlist</a>
         <button type="submit" class="btn">Logout</button>
     </form>
 </header>
 <main>
     <p class="tagline">This is the Prime Reel home page. Explore movies, series, and more!</p>
-
     <div class="movie-list">
         <!-- Loop through the movie list and display each movie card -->
         <c:forEach var="movie" items="${movies}">
@@ -60,11 +60,28 @@
                             </c:otherwise>
                         </c:choose>
 
+<%--                        <button class="action-button">--%>
+<%--                            <span class="material-icons">favorite_border</span> Wishlist--%>
+<%--                        </button>--%>
 
-
-                        <button class="action-button">
-                            <span class="material-icons">favorite_border</span> Wishlist
+                        <button class="action-button" onclick="addToWishlist('${movie.id}')">
+                            <span class="material-icons">favorite</span> Wishlist
                         </button>
+
+                        <script>
+                            function addToWishlist(movieId) {
+                                const userId = '${sessionScope.userId}'; // This assumes the user is stored in sessionScope
+                                fetch('/wishlist/add?userId=' + userId + '&movieId=' + movieId, { method: 'POST' })
+                                    .then(response => {
+                                        if (response.ok) {
+                                            alert('Movie added to your Wishlist!');
+                                        } else {
+                                            alert('Failed to add movie to Wishlist.');
+                                        }
+                                    });
+                            }
+                        </script>
+
                         <button class="action-button">
                             <span class="material-icons">star_rate</span> Rate
                         </button>

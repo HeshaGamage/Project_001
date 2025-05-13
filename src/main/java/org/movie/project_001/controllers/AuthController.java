@@ -37,9 +37,10 @@ public class AuthController {
         if (isAuthenticated) {
             User loggedinUser = userService.getUserByUserName(username);
 
-            // Add user info to session to keep them logged in
+//             Add user info to session to keep them logged in
             session.setAttribute("username", loggedinUser.getUsername());
             session.setAttribute("userId", loggedinUser.getUserId());
+//            session.setAttribute("user", loggedinUser.getUserId());
             return "redirect:/";
 
         } else {
@@ -52,10 +53,18 @@ public class AuthController {
     // Log-Out: Remove the user from session
     @PostMapping("/logout")
     public String logOut(HttpSession session) throws IOException {
-        userService.logOut(session.getAttribute("user").toString());
+        Object userIdObj = session.getAttribute("userId");
+        if (userIdObj == null) {
+            return "redirect:/login"; // Already logged out
+        }
+        userService.logOut(userIdObj.toString());
         session.invalidate();
         return "redirect:/login";
     }
+
+
+
+
 
 
 //    @DeleteMapping("/signout")
