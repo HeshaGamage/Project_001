@@ -2,6 +2,7 @@ package org.movie.project_001.controllers;
 
 import org.movie.project_001.models.Review;
 import org.movie.project_001.service.ReviewService;
+import org.movie.project_001.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,11 +19,6 @@ public class ReviewController {
     @GetMapping
     public List<Review> getAllReviews() throws IOException {
         return reviewService.getAllReviews();
-    }
-
-    @GetMapping("/{id}")
-    public Review getReviewById(@PathVariable UUID id) throws IOException {//todo change this to get review by movie
-        return reviewService.getReviewById(id);
     }
 
     @PostMapping

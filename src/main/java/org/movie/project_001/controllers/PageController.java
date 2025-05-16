@@ -2,14 +2,8 @@ package org.movie.project_001.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import org.movie.project_001.models.Movie;
-import org.movie.project_001.models.Rental;
-import org.movie.project_001.models.User;
-import org.movie.project_001.models.WishList;
-import org.movie.project_001.service.MovieService;
-import org.movie.project_001.service.RentalService;
-import org.movie.project_001.service.UserService;
-import org.movie.project_001.service.WishListService;
+import org.movie.project_001.models.*;
+import org.movie.project_001.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +26,7 @@ public class PageController {
     @Autowired
     WishListService wishlistService;
     @Autowired
-    UserService userService;
+    ReviewService reviewService;
 
     @GetMapping("/home")
     public String homePage(HttpServletRequest request, Model model, @SessionAttribute("userId") UUID userId) throws IOException {
@@ -109,6 +103,9 @@ public class PageController {
         List<Rental> userRentals = rentalService.getRentalByUserId(userId);
         boolean isMovieRented = userRentals != null && userRentals.stream().anyMatch(rental -> rental.getMovieId().equals(id));
         model.addAttribute("isMovieRented", isMovieRented);
+
+        List<Review> reviews = reviewService.getReviewByMovieId(id);
+        model.addAttribute("reviews", reviews);
 
         request.setAttribute("originalPath", "/movie-details");
         request.setAttribute("contentPage", "/WEB-INF/jsp/pages/movie-details.jsp");

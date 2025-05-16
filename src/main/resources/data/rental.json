@@ -1,1 +1,30 @@
-[{"rentalId":"78184739-6b83-4957-99b7-a69ed2008b8d","movieId":"301a621e-5332-4749-a939-1534c9e66657","userId":"d1569d02-734a-4fe9-b043-e5bae129e8e1","rentalDate":"2025-05-16","returnDate":null},{"rentalId":"21c16ab4-215f-4355-b653-209aab8429a6","movieId":"340c23b3-37ec-4675-859d-ca4900a0af70","userId":"d1569d02-734a-4fe9-b043-e5bae129e8e1","rentalDate":"2025-05-16","returnDate":null},{"rentalId":"ac3c2ac1-7580-4be0-8c8b-b1646813371b","movieId":"36374753-a4e8-43ef-ba16-5234b89447d5","userId":"d1569d02-734a-4fe9-b043-e5bae129e8e1","rentalDate":"2025-05-16","returnDate":null},{"rentalId":"95eebd98-17c0-4e01-a03b-2e91170fbac3","movieId":"ba8d51ff-5555-40cd-9c90-db434e4e17e3","userId":"d1569d02-734a-4fe9-b043-e5bae129e8e1","rentalDate":"2025-05-16","returnDate":null}]
+[
+  {
+    "rentalId": "78184739-6b83-4957-99b7-a69ed2008b8d",
+    "movieId": "301a621e-5332-4749-a939-1534c9e66657",
+    "userId": "d1569d02-734a-4fe9-b043-e5bae129e8e1",
+    "rentalDate": "2025-05-16",
+    "returnDate": null
+  },
+  {
+    "rentalId": "21c16ab4-215f-4355-b653-209aab8429a6",
+    "movieId": "340c23b3-37ec-4675-859d-ca4900a0af70",
+    "userId": "d1569d02-734a-4fe9-b043-e5bae129e8e1",
+    "rentalDate": "2025-05-16",
+    "returnDate": null
+  },
+  {
+    "rentalId": "ac3c2ac1-7580-4be0-8c8b-b1646813371b",
+    "movieId": "36374753-a4e8-43ef-ba16-5234b89447d5",
+    "userId": "d1569d02-734a-4fe9-b043-e5bae129e8e1",
+    "rentalDate": "2025-05-16",
+    "returnDate": null
+  },
+  {
+    "rentalId": "95eebd98-17c0-4e01-a03b-2e91170fbac3",
+    "movieId": "ba8d51ff-5555-40cd-9c90-db434e4e17e3",
+    "userId": "d1569d02-734a-4fe9-b043-e5bae129e8e1",
+    "rentalDate": "2025-05-16",
+    "returnDate": null
+  }
+]

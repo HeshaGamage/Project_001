@@ -18,3 +18,10 @@ function rentMovie(movieId, userId) {
             location.reload();
         });
 }
+
+function rateMovie(movieId, userId, rating, comment) {
+    // fetch('/rentals?userId=' + userId + '&movieId=' + movieId, {method: 'POST'})
+    //     .then(() => {
+    //         location.reload();
+    //     });
+}

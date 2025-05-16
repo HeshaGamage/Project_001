@@ -22,10 +22,7 @@ public class MovieService {
     }
 
     public Movie getMovieById(UUID movie_id) throws IOException {
-        return getAllMovies().stream()
-                .filter(movie -> movie.getId().equals(movie_id))
-                .findFirst()
-                .orElse(null);
+        return getAllMovies().stream().filter(movie -> movie.getId().equals(movie_id)).findFirst().orElse(null);
 
     }
 
@@ -63,6 +60,4 @@ public class MovieService {
         }
         return matchingMovies;
     }
-
-
 }

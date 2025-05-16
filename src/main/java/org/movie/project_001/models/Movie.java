@@ -9,24 +9,22 @@ public class Movie {
     private String description;
     private Double rating;
     private boolean available;
-    private List<Review> reviews;
     private String posterUrl;
-//constructor
+
+    //constructor
     public Movie() {
     }
 
-    public Movie(String description, Double rating, boolean available, String title) {
+    public Movie(String description, Double rating, boolean available, String title, List<Review> reviews) {
         this.description = description;
         this.rating = rating;
         this.available = available;
         this.title = title;
     }
-//getters and setters
+
     public UUID getId() { //only getter for ID because it's immutable
         return id;
     }
-
-
 
     public String getTitle() {
         return title;
