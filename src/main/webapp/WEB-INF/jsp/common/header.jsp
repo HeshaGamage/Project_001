@@ -48,6 +48,13 @@
         color: #ccc;
     }
 
+    .active-nav {
+        color: #ffcc00;
+        font-weight: bold;
+        border-bottom: 2px solid #ffcc00;
+        padding-bottom: 4px;
+    }
+
     .btn {
         background-color: #ffcc00;
         border: none;
@@ -101,26 +108,28 @@
 </style>
 
 <header class="navbar">
-    <!-- Left: Logo and Navigation -->
-    <div class="navbar-left">
-        <a href="${pageContext.request.contextPath}/home" class="navbar-logo">Prime Reel</a>
-        <nav>
-            <a href="${pageContext.request.contextPath}/wishlist">Wishlist</a>
-            <a href="${pageContext.request.contextPath}/rented">Rented</a>
-        </nav>
-    </div>
+  <!-- Left: Logo and Navigation -->
+  <div class="navbar-left">
+    <a href="${pageContext.request.contextPath}/home" class="navbar-logo">Prime Reel</a>
+    <nav>
+      <a href="${pageContext.request.contextPath}/wishlist"
+         class="${originalPath == '/wishlist' ? 'active-nav' : ''}">Wishlist</a>
+      <a href="${pageContext.request.contextPath}/rented"
+         class="${originalPath == '/rented' ? 'active-nav' : ''}">Rented</a>
+    </nav>
+  </div>
 
-    <!-- Right: User Info, Conditional Back Button, Logout -->
-    <div class="navbar-right">
-        <c:set var="isHomePage" value="${originalPath == '/home'}" />
-        <!-- ✅ Show Back Button Only If NOT Home -->
-        <c:if test="${!isHomePage}">
-            <a href="${pageContext.request.contextPath}/home" class="back-link">Back to Home</a>
-        </c:if>
+  <!-- Right: User Info, Conditional Back Button, Logout -->
+  <div class="navbar-right">
+    <c:set var="isHomePage" value="${originalPath == '/home'}"/>
+    <!-- ✅ Show Back Button Only If NOT Home -->
+    <c:if test="${!isHomePage}">
+      <a href="${pageContext.request.contextPath}/home" class="back-link">Back to Home</a>
+    </c:if>
 
-        <p class="navbar-user">Logged in as: <b>${sessionScope.username}</b></p>
-        <form action="${pageContext.request.contextPath}/auth/logout" method="post" class="logout-form">
-            <button type="submit" class="btn">Logout</button>
-        </form>
-    </div>
+    <p class="navbar-user">Logged in as: <b>${sessionScope.username}</b></p>
+    <form action="${pageContext.request.contextPath}/auth/logout" method="post" class="logout-form">
+      <button type="submit" class="btn">Logout</button>
+    </form>
+  </div>
 </header>

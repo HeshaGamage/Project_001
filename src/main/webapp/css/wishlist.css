@@ -1,19 +1,22 @@
-.movie-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    padding: 1em;
+/* Consistent layout container */
+.wishlist-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
 }
 
-.movie-card {
-    border: 1px solid #ccc;
-    padding: 15px;
-    background-color: #f9f9f9;
-    width: 300px;
+/* Reuse from homepage */
+.tagline {
     text-align: center;
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 16px;
 }
 
-.movie-card img {
-    max-width: 100%;
-    height: auto;
+/* Empty state message */
+.empty-message {
+    text-align: center;
+    color: #777;
+    font-size: 1rem;
+    margin-top: 40px;
 }
