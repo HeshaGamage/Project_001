@@ -29,12 +29,8 @@ public class RentalController {
     }
 
     @PostMapping
-    public String rentMovie(@RequestParam UUID movieId,
-                            @RequestParam UUID userId) throws IOException {
-
+    public void rentMovie(@RequestParam UUID movieId, @RequestParam UUID userId) throws IOException {
         rentalService.rentMovie(movieId, userId);
-
-        return "redirect:/home";
     }
 
     @PutMapping("/return/{id}")

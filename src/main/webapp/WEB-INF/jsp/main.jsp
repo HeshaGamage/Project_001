@@ -20,6 +20,9 @@
 <main>
   <%-- Dynamic content based on path --%>
   <jsp:include page="${contentPage}"/>
+
+  <%-- Include JS --%>
+  <script src="${pageContext.request.contextPath}/js/index.js"></script>
 </main>
 </body>
 </html>

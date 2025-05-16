@@ -29,19 +29,16 @@ public class RentalService {
     }
 
     public List<Rental> getRentalByUserId(UUID userId) throws IOException {
-        return getAllRental().stream()
-                .filter(rental -> rental.getUserId().equals(userId))
-                .collect(Collectors.toList());
+        return getAllRental().stream().filter(rental -> rental.getUserId().equals(userId)).collect(Collectors.toList());
     }
 
-
-    public void saveRental(Rental rental)throws IOException {
+    public void saveRental(Rental rental) throws IOException {
         List<Rental> rentals = new ArrayList<>(getAllRental());
         rentals.add(rental);
         mapper.writeValue(new File(rent_path), rentals);
     }
 
-    public void updateRental(UUID id, Rental updatedRental)throws IOException {
+    public void updateRental(UUID id, Rental updatedRental) throws IOException {
         List<Rental> rentals = new ArrayList<>(getAllRental());
         for (int i = 0; i < rentals.size(); i++) {
             if (rentals.get(i).getRentalId().equals(id)) {
@@ -52,13 +49,13 @@ public class RentalService {
         mapper.writeValue(new File(rent_path), rentals);
     }
 
-    public void deleteRental(UUID id)throws IOException {
+    public void deleteRental(UUID id) throws IOException {
         List<Rental> rentals = new ArrayList<>(getAllRental());
         rentals.removeIf(rental -> rental.getRentalId().equals(id));
         mapper.writeValue(new File(rent_path), rentals);
     }
 
-    public void returnMovie(UUID rentalId)throws IOException {
+    public void returnMovie(UUID rentalId) throws IOException {
         SimpleDateFormat d1 = new SimpleDateFormat("yyyy-MM-dd");
         String date = d1.format(new Date());
         List<Rental> rentals = new ArrayList<>(getAllRental());
@@ -71,14 +68,13 @@ public class RentalService {
         mapper.writeValue(new File(rent_path), rentals);
     }
 
-    public Optional<Rental> getRentalByUserAndMovieId(UUID userId, UUID movieId) throws IOException{
+    public Optional<Rental> getRentalByUserAndMovieId(UUID userId, UUID movieId) throws IOException {
         return getAllRental().stream()
-                .filter(rental -> rental.getUserId().equals(userId) && rental.getUserId().equals(movieId))
-                .findFirst();
+                .filter(rental -> rental.getUserId().equals(userId) && rental.getUserId().equals(movieId)).findFirst();
 
     }
 
-    public void rentMovie(UUID movieId, UUID userId)throws IOException {
+    public void rentMovie(UUID movieId, UUID userId) throws IOException {
         String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         Rental rental = new Rental(movieId, userId, date, null);
 

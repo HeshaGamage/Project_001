@@ -17,7 +17,6 @@ public class WishListController {
     private WishListService wishlistService;
 
     @GetMapping("/all")
-
     public List<WishList> getAllWishlists() throws IOException {
         return wishlistService.getAllWishlists();
     }
@@ -33,9 +32,7 @@ public class WishListController {
     }
 
     @PostMapping("/remove")
-    public String removeMovieFromWishlist(@RequestParam UUID userId, @RequestParam UUID movieId) throws IOException {
+    public void removeMovieFromWishlist(@RequestParam UUID userId, @RequestParam UUID movieId) throws IOException {
         wishlistService.removeMovieFromWishlist(userId, movieId);
-        // Redirect back to the wishlist page after removing the movie
-        return "redirect:/wishlist";
     }
 }
