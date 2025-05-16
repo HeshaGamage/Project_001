@@ -38,7 +38,4 @@ public class WishListController {
         // Redirect back to the wishlist page after removing the movie
         return "redirect:/wishlist";
     }
-
-
-
 }

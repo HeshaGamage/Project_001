@@ -1,9 +1,6 @@
 package org.movie.project_001.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-
-import org.movie.project_001.models.Movie;
 import org.movie.project_001.models.Rental;
 import org.movie.project_001.service.MovieService;
 import org.movie.project_001.service.RentalService;

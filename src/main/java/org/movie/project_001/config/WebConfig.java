@@ -7,7 +7,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-
     @Autowired
     private AuthInterceptor authInterceptor;
 
@@ -15,6 +14,6 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor)
                 .addPathPatterns("/**") // Apply to all routes
-                .excludePathPatterns("/auth/login","/css/**", "/js/**"); // Exclude static resources
+                .excludePathPatterns("/auth/login", "/css/**", "/js/**"); // Exclude static resources
     }
 }

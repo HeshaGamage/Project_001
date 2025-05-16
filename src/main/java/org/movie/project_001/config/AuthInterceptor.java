@@ -7,12 +7,11 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 @Component
 public class AuthInterceptor implements HandlerInterceptor {
-
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // Allow public pages without authentication
         String uri = request.getRequestURI();
-        if (uri.endsWith("/login") || uri.endsWith("/error")|| uri.endsWith("/signup")|| uri.endsWith("/auth/logout")) {
+        if (uri.endsWith("/login") || uri.endsWith("/error") || uri.endsWith("/signup") || uri.endsWith("/auth/logout")) {
             return true;
         }
 
