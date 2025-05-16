@@ -18,20 +18,23 @@ public class MovieService {
 
     public List<Movie> getAllMovies() throws IOException {
         File movie_file = new File(movie_path);
-        return Arrays.asList(mapper.readValue(movie_file,Movie[].class));
+        return Arrays.asList(mapper.readValue(movie_file, Movie[].class));
     }
+
     public Movie getMovieById(UUID movie_id) throws IOException {
-            return getAllMovies().stream()
-                    .filter(movie -> movie.getId().equals(movie_id))
-                    .findFirst()
-                    .orElse(null);
+        return getAllMovies().stream()
+                .filter(movie -> movie.getId().equals(movie_id))
+                .findFirst()
+                .orElse(null);
 
     }
+
     public void saveMovie(Movie movie) throws IOException {
         List<Movie> movies = new ArrayList<>(getAllMovies());
         movies.add(movie);
         mapper.writeValue(new File(movie_path), movies);
     }
+
     public void updateMovie(UUID id, Movie updatedMovie) throws IOException {
         List<Movie> movies = new ArrayList<>(getAllMovies());
         for (int i = 0; i < movies.size(); i++) {
@@ -42,11 +45,13 @@ public class MovieService {
         }
         mapper.writeValue(new File(movie_path), movies);
     }
+
     public void deleteMovie(UUID id) throws IOException {
         List<Movie> movies = new ArrayList<>(getAllMovies());
         movies.removeIf(movie -> movie.getId().equals(id));
         mapper.writeValue(new File(movie_path), movies);
     }
+
     public List<Movie> searchMoviesByTitle(String title) throws IOException {
         List<Movie> allMovies = getAllMovies();
         List<Movie> matchingMovies = new ArrayList<>();
@@ -58,8 +63,6 @@ public class MovieService {
         }
         return matchingMovies;
     }
-
-
 
 
 }

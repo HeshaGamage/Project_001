@@ -72,6 +72,8 @@ public class UserService {
         if (user == null) {
             throw new IllegalArgumentException("No user found with username");
         }
+        System.out.println(loggedInUsers);
+        System.out.println(user);
 
         // Remove the user from session
         if (!loggedInUsers.containsKey(user.getUserId())) {

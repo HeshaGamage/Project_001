@@ -9,7 +9,7 @@
 <body>
 <div class="error-page">
     <h1>Oops! Something went wrong.</h1>
-    <a href="${pageContext.request.contextPath}/login" class="btn">Back to Login</a>
+    <a href="${pageContext.request.contextPath}/home" class="btn">Back to Home</a>
 </div>
 </body>
 </html>

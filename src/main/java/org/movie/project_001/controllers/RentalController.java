@@ -34,7 +34,7 @@ public class RentalController {
 
         rentalService.rentMovie(movieId, userId);
 
-        return "redirect:/";
+        return "redirect:/home";
     }
 
     @PutMapping("/return/{id}")
