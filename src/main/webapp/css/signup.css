@@ -1,3 +1,65 @@
+/* Generic Layout Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+header .btn {
+    background-color: white;
+    color: #007bff;
+    font-weight: bold;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header .btn:hover {
+    background-color: #f1f1f1;
+}
+
+main {
+    padding: 16px 24px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+header div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+header div p {
+    margin-right: 10px;
+    color: #555;
+    font-size: 16px;
+}
+
 .signup-page {
     display: flex;
     align-items: center;

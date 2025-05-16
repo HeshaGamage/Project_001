@@ -1,5 +1,6 @@
 package org.movie.project_001.controllers;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.movie.project_001.models.Movie;
 import org.movie.project_001.models.Rental;
@@ -31,9 +32,8 @@ public class PageController {
     @Autowired
     UserService userService;
 
-    @GetMapping("/")
-    public String homePage(Model model, @SessionAttribute("userId") UUID userId) throws IOException {
-        System.out.println(userId);
+    @GetMapping("/home")
+    public String homePage(HttpServletRequest request, Model model, @SessionAttribute("userId") UUID userId) throws IOException {
         List<Movie> movies = movieService.getAllMovies(); // You need this service
         model.addAttribute("movies", movies);
         List<Rental> rentals = rentalService.getRentalByUserId(userId);
@@ -41,7 +41,11 @@ public class PageController {
                 .map(rental -> rental.getMovieId().toString()) // Extract movieId and convert to String
                 .toArray(String[]::new);
         model.addAttribute("rentedMovieIds", rentedMovieIds);
-        return "home";
+
+        request.setAttribute("originalPath", "/home");
+        request.setAttribute("contentPage", "/WEB-INF/jsp/pages/home.jsp");
+        request.setAttribute("pageCss", "/css/home.css");
+        return "main";
     }
 
     @GetMapping("/login")
@@ -55,7 +59,7 @@ public class PageController {
     }
 
     @GetMapping("/wishlist")
-    public String wishlistPage(Model model, HttpSession session) throws IOException {
+    public String wishlistPage(HttpServletRequest request, Model model, HttpSession session) throws IOException {
         // Retrieve userId from the session
         UUID userId = (UUID) session.getAttribute("userId");
         if (userId == null) {
@@ -78,7 +82,11 @@ public class PageController {
             }
         }
         model.addAttribute("movies", movies);
-        return "wishlist";
+
+        request.setAttribute("originalPath", "/wishlist");
+        request.setAttribute("contentPage", "/WEB-INF/jsp/pages/wishlist.jsp");
+        request.setAttribute("pageCss", "/css/wishlist.css");
+        return "main";
     }
 }
 

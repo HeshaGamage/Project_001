@@ -80,27 +80,10 @@ public class UserService {
         loggedInUsers.remove(user.getUserId());
     }
 
-//    //signout
-//    public void signOut(String username, String password) throws IOException {
-//        // Validate the user's credentials
-//        User user = getUserByUsernameAndPassword(username, password);
-//        if (user == null) {
-//            throw new IllegalArgumentException("Invalid username or password!");
-//        }
-//
-//        // Remove the user from the database
-//        deleteUser(user.getUserId());
-//
-//        // Remove the user from session if they are logged in
-//        loggedInUsers.remove(user.getUserId());
-//    }
-
-    //checkin if loogedin
+    //checkin if logged in
     public boolean isLoggedIn(UUID userId) {
         return loggedInUsers.containsKey(userId);
     }
-
-
 
     public List<User> getAllUsers() throws IOException {
         File file = new File(USERS_FILE);

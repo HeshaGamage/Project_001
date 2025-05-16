@@ -35,7 +35,7 @@ public class AuthController {
             // Add user info to session to keep them logged in
             session.setAttribute("username", loggedinUser.getUsername());
             session.setAttribute("userId", loggedinUser.getUserId());
-            return "redirect:/";
+            return "redirect:/home";
         } else {
             // Set error message and return to login page
             return "redirect:/login?error=true";
@@ -46,7 +46,7 @@ public class AuthController {
     // Log-Out: Remove the user from session
     @PostMapping("/logout")
     public String logOut(HttpSession session) throws IOException {
-        Object userIdObj = session.getAttribute("userId");
+        Object userIdObj = session.getAttribute("username");
         if (userIdObj == null) {
             return "redirect:/login"; // Already logged out
         }
